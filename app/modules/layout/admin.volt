@@ -151,7 +151,7 @@
                 <!-- END DASHBOARD -->
 
                 <!-- BEGIN UI -->
-                <li>
+                <li class="{{ activeMenu=="items"?"active expanded":"" }}">
                     <a href="/items_admin/index">
                         <div class="gui-icon"><i class="fa fa-puzzle-piece fa-fw"></i></div>
                         <span class="title">Items</span>

@@ -17,8 +17,43 @@ class ItemsAdminController extends ControllerAdminBase
 
     public function indexAction()
     {
-
+        $limit = 20;
+        $p = $this->request->get("p");
+        if ($p <= 1) $p = 1;
+        $cp = ($p - 1) * $limit;
+        $query = "1=1 ";
+        $data = Items::find([
+            'conditions' => $query,
+            'order' => 'id desc',
+            'limit' => $limit,
+            'offset' => $cp
+        ]);       
+        $this->view->painginfo = Helper::paginginfo(Items::count($query), $limit, $p);
+        $this->view->listdata = $data;
     }
-
+    public function formAction(){
+        $id = $this->request->get("id");
+        if ($this->request->isPost()) {
+            try {
+                $datapost = Helper::post_to_array("name,status");
+                $avatar = $this->post_file_key("avatar");
+                if ($avatar != null) $datapost['avatar'] = $avatar;
+                if ($id > 0) { // Update
+                    $o = Items::findFirst($id);
+                }
+                else { //insert
+                    $o = new Items();
+                    $datapost['create_at'] = time();
+                }
+                $o->map_object($datapost);
+                if ($o->save()) $this->flash->success("Xử lý thành công");
+                else  $this->flash->error("Xử lý thất bại");
+            } catch (\Exception $e) {
+                $this->flash->error($e->getMessage());
+            }
+        }
+        if (!empty($id)) $o = Items::findFirst($id);
+        $this->view->object = $o;
+    }
 
 }

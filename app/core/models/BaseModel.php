@@ -8,5 +8,12 @@
  */
 class BaseModel extends \Phalcon\Mvc\Model
 {
-
+    /***
+     * Hàm map array vào object model của phalcon
+     * @param $arr
+     */
+    public function map_object($arr){
+        foreach($arr as $key=>$val) $this->{$key} = $val;
+        return $this;
+    }
 }
