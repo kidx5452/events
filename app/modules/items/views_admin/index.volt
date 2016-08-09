@@ -37,6 +37,7 @@
                     {% endfor %}
                     </tbody>
                 </table>
+                {% include "layout/paging.volt" %}
             </div>
         </div>
     </div><!--end .section-body -->

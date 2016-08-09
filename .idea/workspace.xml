@@ -2,19 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a022c7d7-497f-49ba-80ed-b89e8ee881c3" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/deployment.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/webServers.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/core/libs/Helper.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/core/models/Items.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/modules/items/views_admin/form.volt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/modules/layout/paging.volt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/config.php" afterPath="$PROJECT_DIR$/app/config/config.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/core/controllers/ControllerAdminBase.php" afterPath="$PROJECT_DIR$/app/core/controllers/ControllerAdminBase.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/core/models/BaseModel.php" afterPath="$PROJECT_DIR$/app/core/models/BaseModel.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/modules/items/ItemsAdminController.php" afterPath="$PROJECT_DIR$/app/modules/items/ItemsAdminController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/modules/items/views_admin/index.volt" afterPath="$PROJECT_DIR$/app/modules/items/views_admin/index.volt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/modules/layout/admin.volt" afterPath="$PROJECT_DIR$/app/modules/layout/admin.volt" />
     </list>
     <ignored path="event-vantiens.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -46,12 +36,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.volt" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.volt" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/modules/items/views_admin/index.volt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="535">
-              <caret line="28" column="46" selection-start-line="28" selection-start-column="46" selection-end-line="28" selection-end-column="46" />
-              <folding />
+            <state relative-caret-position="399">
+              <caret line="43" column="10" selection-start-line="43" selection-start-column="10" selection-end-line="43" selection-end-column="10" />
+              <folding>
+                <element signature="n#table#0;n#div#1;n#div#0;n#div#1;n#section#0;n#!!top" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -69,18 +61,18 @@
       <file leaf-file-name="ItemsAdminController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/modules/items/ItemsAdminController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="294">
+            <state relative-caret-position="42">
               <caret line="14" column="42" selection-start-line="14" selection-start-column="42" selection-end-line="14" selection-end-column="42" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="admin.volt" pinned="false" current-in-tab="true">
+      <file leaf-file-name="admin.volt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/modules/layout/admin.volt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="178">
-              <caret line="137" column="79" selection-start-line="137" selection-start-column="79" selection-end-line="137" selection-end-column="79" />
+            <state relative-caret-position="787">
+              <caret line="160" column="0" selection-start-line="160" selection-start-column="0" selection-end-line="160" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -155,8 +147,8 @@
         <option value="$PROJECT_DIR$/app/modules/items/ItemsAdminController.php" />
         <option value="$PROJECT_DIR$/app/core/controllers/ControllerAdminBase.php" />
         <option value="$PROJECT_DIR$/app/config/config.php" />
-        <option value="$PROJECT_DIR$/app/modules/items/views_admin/index.volt" />
         <option value="$PROJECT_DIR$/app/modules/layout/admin.volt" />
+        <option value="$PROJECT_DIR$/app/modules/items/views_admin/index.volt" />
       </list>
     </option>
   </component>
@@ -474,6 +466,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Project\2016\event-vantiens\app\modules\layout" />
       <recent name="D:\Project\2016\event-vantiens\app\core\libs" />
       <recent name="D:\Project\2016\event-vantiens\app\modules\items" />
       <recent name="D:\Project\2016\event-vantiens\app\modules\thele" />
@@ -524,12 +517,20 @@
       <updated>1470284141149</updated>
       <workItem from="1470284142501" duration="4954000" />
       <workItem from="1470647158710" duration="1696000" />
-      <workItem from="1470734325136" duration="2368000" />
+      <workItem from="1470734325136" duration="3721000" />
     </task>
+    <task id="LOCAL-00001" summary="ABC">
+      <created>1470736704959</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1470736704959</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="9018000" />
+    <option name="totallyTimeSpent" value="10371000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="0" />
@@ -537,10 +538,11 @@
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1652452" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32900432" sideWeight="0.5021322" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32900432" sideWeight="0.4978678" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32900432" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="CSS-X-Fire" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32900432" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -549,6 +551,12 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_NEW_TODO" value="false" />
+    <MESSAGE value="ABC" />
+    <option name="LAST_COMMIT_MESSAGE" value="ABC" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -609,7 +617,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="63">
           <caret line="3" column="36" selection-start-line="3" selection-start-column="36" selection-end-line="3" selection-end-column="36" />
-          <folding />
+          <folding>
+            <element signature="n#table#0;n#div#1;n#div#0;n#div#1;n#section#0;n#!!top" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -625,7 +635,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="63">
           <caret line="3" column="36" selection-start-line="3" selection-start-column="36" selection-end-line="3" selection-end-column="36" />
-          <folding />
+          <folding>
+            <element signature="n#table#0;n#div#1;n#div#0;n#div#1;n#section#0;n#!!top" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -808,27 +820,29 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/modules/items/views_admin/index.volt">
+    <entry file="file://$PROJECT_DIR$/app/modules/layout/admin.volt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="535">
-          <caret line="28" column="46" selection-start-line="28" selection-start-column="46" selection-end-line="28" selection-end-column="46" />
+        <state relative-caret-position="787">
+          <caret line="160" column="0" selection-start-line="160" selection-start-column="0" selection-end-line="160" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/modules/items/ItemsAdminController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
+        <state relative-caret-position="42">
           <caret line="14" column="42" selection-start-line="14" selection-start-column="42" selection-end-line="14" selection-end-column="42" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/modules/layout/admin.volt">
+    <entry file="file://$PROJECT_DIR$/app/modules/items/views_admin/index.volt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="178">
-          <caret line="137" column="79" selection-start-line="137" selection-start-column="79" selection-end-line="137" selection-end-column="79" />
-          <folding />
+        <state relative-caret-position="399">
+          <caret line="43" column="10" selection-start-line="43" selection-start-column="10" selection-end-line="43" selection-end-column="10" />
+          <folding>
+            <element signature="n#table#0;n#div#1;n#div#0;n#div#1;n#section#0;n#!!top" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
