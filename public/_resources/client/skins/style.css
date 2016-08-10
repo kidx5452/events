@@ -377,4 +377,21 @@ overflow: auto;
    .txt-blue { font-size:13px}
    ul.block-doiqua li { padding:50px 0;  width: 100%;}
    .img-absolute { left:10px;}
- }	
+ }
+
+.alert{
+    background: #307dff;
+    color:#fff;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 5px 0;
+    font-size: 12px;
+}
+.alert.alert-success{
+    background: #78dd00;
+    color:#fff;
+}
+.alert.alert-error{
+    background: #ff6b11;
+    color:#fff;
+}

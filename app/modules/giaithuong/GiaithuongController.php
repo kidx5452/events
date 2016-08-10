@@ -15,7 +15,8 @@ class GiaithuongController extends ControllerBase
         $this->view->activeMenu = "giaithuong";
     }
     public function indexAction(){
-
+        $config = Configs::findFirst(array("conditions"=>"key='giaithuong'"));
+        $this->view->object = $config;
     }
 
 

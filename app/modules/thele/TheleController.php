@@ -15,7 +15,8 @@ class TheleController extends ControllerBase
         $this->view->activeMenu = "thele";
     }
     public function indexAction(){
-
+        $config = Configs::findFirst(array("conditions"=>"key='thele'"));
+        $this->view->object = $config;
     }
 
 

@@ -13,6 +13,7 @@ class ControllerBase extends \Phalcon\Mvc\Controller
     public function initialize()
     {
         $this->layoutFile = "index";
+        $this->view->auth = $this->getAuth();
     }
 
     /***

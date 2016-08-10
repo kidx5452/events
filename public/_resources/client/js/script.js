@@ -43,7 +43,7 @@ jQuery.noConflict();
     })( jQuery );
 	
 
-	
+
 /**  Side bar  **/
 jQuery.noConflict();
 (function( $ ) {

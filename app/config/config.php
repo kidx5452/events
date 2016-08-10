@@ -1,5 +1,4 @@
 <?php
-
 defined('APP_PATH') || define('APP_PATH', realpath('.'));
 
 return new \Phalcon\Config(array(
@@ -9,6 +8,14 @@ return new \Phalcon\Config(array(
         'username'    => 'events',
         'password'    => '123456654321$',
         'dbname'      => 'events',
+        'charset'     => 'utf8',
+    ),
+    'database_auth' => array(
+        'adapter'     => 'Mysql',
+        'host'        => '127.0.0.1',
+        'username'    => 'root',
+        'password'    => 'vantien!@#$%^',
+        'dbname'      => 'vantiens',
         'charset'     => 'utf8',
     ),
     'application' => array(

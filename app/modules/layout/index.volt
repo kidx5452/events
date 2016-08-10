@@ -11,6 +11,12 @@
     <link rel="stylesheet" href="/_resources/client/skins/responsive.css" type="text/css" media="all">
     <link rel="stylesheet" href="/_resources/client/skins/menu_sideslide.css" type="text/css" media="all">
     <link rel="stylesheet" href="/_resources/client/skins/font-awesome.css" type="text/css" media="all">
+
+    <script type="text/javascript" src="/_resources/client/js/jquery.min.js"></script>
+    <script type="text/javascript" src="/_resources/client/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/_resources/client/js/classie.js"></script>
+    <script type="text/javascript" src="/_resources/client/js/rwdImageMaps.min.js"></script>
+    <script type="text/javascript" src="/_resources/client/js/script.js"></script>
 </head>
 
 <body>
@@ -42,6 +48,9 @@
     </nav>
 
     <div>
+        <div>
+            {{ flash.output() }}
+        </div>
         {{ content() }}
     </div>
 
@@ -59,11 +68,8 @@
 
 <div class="content"></div>
 
-<script type="text/javascript" src="/_resources/client/js/jquery.min.js"></script>
-<script type="text/javascript" src="/_resources/client/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="/_resources/client/js/classie.js"></script>
-<script type="text/javascript" src="/_resources/client/js/rwdImageMaps.min.js"></script>
-<script type="text/javascript" src="/_resources/client/js/script.js"></script>
+
+
 
 </body>
 </html>

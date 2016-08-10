@@ -1,0 +1,53 @@
+.account{width: 619px; height: 369px; background: url(../images/account/bg-account.png) no-repeat top left; font-family: arial;  }
+#tab-regis{width: 316px; float: left;}
+#tab-login{width: 300px; float: left;}
+.account .title{height: 60px;}
+.account .kq-rg, .kq-login{height: 30px; line-height: 30px; text-align: center; color: red;font-size: 12px;}
+.account p{width: 92%; height: 37px; margin: 0 0 6px 24px; line-height: 37px;font-size: 13px;}
+.account p span.ac-acc{background: url(../images/account/icon-text.jpg) no-repeat top left; width: 37px; height: 37px; display: block; float: left;}
+.account p span.ac-mail{background: url(../images/account/icon-text.jpg) no-repeat -74px 0px; width: 37px; height: 37px; display: block; float: left;}
+.account p span.ac-pass{background: url(../images/account/icon-text.jpg) no-repeat -37px 0px; width: 37px; height: 37px; display: block; float: left;}
+.account p span.ac-phone{background: url(../images/account/icon-text.jpg) no-repeat -111px 0px; width: 37px; height: 37px; display: block; float: left;}
+
+.account p input[type='text'],.account p input[type='password']{height: 37px; width: 215px; float: left; border: 1px solid #e5e9ec; outline: none; padding: 0 3px;border-left: none;}
+.account p input[type='text']:focus, .account p input[type='password']:focus{border: 1px solid #66afe9;}
+.account p input[type='checkbox']{height: 16px; width: 16px; float: left; line-height: 37px; background: none; margin: 10px 12px 0 0;}
+.account p label{float: left;}
+/* .account p input[type='button']{height: 38px; width: 124px; background: url(../images/account/bg-button.png); outline: none; border: none; cursor: pointer; margin: 0 0 0 50px;} */
+.account p a{margin-left: 20px; color: red;}
+.account p a:hover{color: #1611f8;}
+/* #btn-rg{background-position: 0 0;}
+#btn-rg:hover{background-position: 0 -38px;}
+#btn-login{background-position: -124px 0;}
+#btn-login:hover{background-position: -124px -38px;} */
+.account ul{height: 32px; width: 250px; text-align: center; margin: 0 0 0 50px}
+.account ul li{float: left; padding: 0px 10px;}
+#fancybox-wrap{position: fixed !important; top: 10% !important;}
+.fancybox-wrap{position: fixed !important; top: 10% !important;}
+#fancybox-content{width: 617px !important; border: none !important;}
+#fancybox-close{background: none !important; right: 15px !important; top: 0 !important;}
+
+.btn_accou{
+	border-radius: 2px;
+	font-weight: 500;
+	outline: 0 none !important;
+	background-color: #f05050;
+	border:none;
+	color: #fff !important;
+	 padding: 6px 12px;
+    text-align: center;
+    vertical-align: middle;
+    white-space: nowrap;
+    font-size: 	14px;
+    cursor:pointer;	
+    margin-left: 	74px;
+}
+.btn_accou:hover{
+	background:#EE3939;
+}
+.btn_login{
+	background:#19A9D5;
+}
+.btn_login:hover{
+	background:#1698BF;
+}

@@ -66,6 +66,18 @@ $di->setShared('db', function () use ($config) {
 
     return new $class($dbConfig);
 });
+/**
+ * Database connection is created based in the parameters defined in the configuration file
+ */
+$di->setShared('dbauth', function () use ($config) {
+    $dbConfig = $config->database_auth->toArray();
+    $adapter = $dbConfig['adapter'];
+    unset($dbConfig['adapter']);
+
+    $class = 'Phalcon\Db\Adapter\Pdo\\' . $adapter;
+
+    return new $class($dbConfig);
+});
 
 /**
  * If the configuration specify the use of metadata adapter use it or use memory otherwise
