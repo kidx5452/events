@@ -33,6 +33,8 @@ class User extends BaseModel
     public $fullname;
     public $address;
     public $cmnd;
+    public $mypointevent;
+    public $count_play;
 
     public function initialize()
     {

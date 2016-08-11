@@ -391,7 +391,7 @@ overflow: auto;
     background: #78dd00;
     color:#fff;
 }
-.alert.alert-error{
+.alert.alert-danger, .alert.alert-error{
     background: #ff6b11;
     color:#fff;
 }
