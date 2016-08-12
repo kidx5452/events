@@ -19,6 +19,20 @@
                             <div class="col-md-8"><input type="text" name="name" value="{{ object.name }}" class="form-control"></div>
                         </div>
                         <div class="form-group">
+                            <label class="col-md-2 control-label">Key</label>
+                            <div class="col-md-8"><input type="text" name="item_keys" value="{{ object.item_keys }}" class="form-control"></div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-md-2 control-label">Vùng đất</label>
+                            <div class="col-md-8">
+                                <select name="level" id="" class="form-control">
+                                    <option {{ object.level==1?"selected":"" }} value="1">Vùng đất 1</option>
+                                    <option {{ object.level==2?"selected":"" }} value="2">Vùng đất 2</option>
+                                    <option {{ object.level==3?"selected":"" }} value="3">Vùng đất 3</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
                             <label class="col-md-2 control-label">Avatar</label>
                             <div class="col-md-8">
                                 {% if object.avatar|length >0 %}

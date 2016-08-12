@@ -35,7 +35,7 @@ class ItemsAdminController extends ControllerAdminBase
         $id = $this->request->get("id");
         if ($this->request->isPost()) {
             try {
-                $datapost = Helper::post_to_array("name,status");
+                $datapost = Helper::post_to_array("name,status,item_keys,level");
                 $avatar = $this->post_file_key("avatar");
                 if ($avatar != null) $datapost['avatar'] = $avatar;
                 if ($id > 0) { // Update
@@ -51,6 +51,7 @@ class ItemsAdminController extends ControllerAdminBase
             } catch (\Exception $e) {
                 $this->flash->error($e->getMessage());
             }
+            $this->response->redirect("items-admin/");
         }
         if (!empty($id)) $o = Items::findFirst($id);
         $this->view->object = $o;

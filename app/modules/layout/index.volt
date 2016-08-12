@@ -36,6 +36,7 @@
     <div class="box-top">
         <div class="col-md-6 col-sm-6 col-xs-12"><h1 class="text-logo">LOGO</h1></div>
         <div class="col-md-6 col-sm-6 col-xs-12 text-company">Truy tìm kho báu<span>Nhanh tay rinh quà</span></div>
+        {% if auth is not empty %}<div class="col-sm-12"><div class="pull-right"><a style="padding: 20px 0;color: #fff" href="/index/logout">Đăng xuất</a></div></div>{% endif %}
     </div>
     <nav class="hidden">
         <ul>

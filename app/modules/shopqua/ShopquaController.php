@@ -15,7 +15,22 @@ class ShopquaController extends ControllerBase
         $this->view->activeMenu = "shopqua";
     }
     public function indexAction(){
-
+        $auth = $this->getAuth();
+        $config = Configs::findFirst(array("conditions"=>"key='thele'"));
+        $this->view->thele = $config;
+        //
+        $user = User::findFirst($auth->id);
+        $this->view->userobject = $user;
+        global $shopdoiqua;
+        foreach($shopdoiqua as $key=>$item){
+            $c = AccountLog::count(array("conditions"=>"item_key=:itemkey:","bind"=>array("itemkey"=>$item['key'])));
+            if($c>0) {
+                $shopdoiqua[$key]['hasitem'] = 1;
+                $itemObj = Items::findFirst(array("conditions"=>"item_keys=:itemkey:","bind"=>array("itemkey"=>$item['key'])));
+                $shopdoiqua[$key]['item'] = $itemObj->toArray();
+            }
+        }
+        $this->view->shopqua = $shopdoiqua;
     }
 
 

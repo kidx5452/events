@@ -4,10 +4,10 @@
     <map name="treasure">
         <area shape="rect" coords="70,95,286,277" data-href="/index/vungdat1" onclick="checklogin(this)"
               class="area-map" id="map1" style="cursor: pointer;" hover-src="/_resources/client/skins/images/map-1.jpg">
-        <area shape="rect" coords="306,78,483,343" href="vung-dat-2.html" class="area-map" id="map2"
-              style="cursor: pointer;" onclick="" hover-src="/_resources/client/skins/images/map-2.jpg">
-        <area shape="rect" coords="511,100,684,346" href="vung-dat-3.html" class="area-map" id="map3"
-              style="cursor: pointer;" onclick="" hover-src="/_resources/client/skins/images/map-3.jpg">
+        <area shape="rect" coords="306,78,483,343" data-href="/index/vungdat2" class="area-map" id="map2"  onclick="checklogin(this)"
+              style="cursor: pointer;" hover-src="/_resources/client/skins/images/map-2.jpg">
+        <area shape="rect" coords="511,100,684,346" data-href="/index/vungdat3" class="area-map" id="map3"  onclick="checklogin(this)"
+              style="cursor: pointer;" hover-src="/_resources/client/skins/images/map-3.jpg">
     </map>
 </div>
 <link rel="stylesheet" href="/static/css/account.css">

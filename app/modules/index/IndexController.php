@@ -27,7 +27,7 @@ class IndexController extends ControllerBase
         $user = User::findFirst(array("conditions" => "username=:username: and password=:password:", "bind" => array("username" => $username, "password" => md5($password))));
         if ($user->id > 0) {
             $this->setAuth($user);
-            $this->response->redirect("/index/vungdat1");
+            $this->response->redirect("/index/index");
             return;
         } else {
             $this->flash->error("No Account info");
@@ -150,6 +150,7 @@ class IndexController extends ControllerBase
 
     public function vungdat1Action()
     {
+        global $point_v1;
         $auth = $this->getAuth();
         if(empty($auth)) {
             $this->flash->error("Bạn cần đăng nhập để vào vùng đất này");
@@ -167,7 +168,7 @@ class IndexController extends ControllerBase
         }
         else if($this->request->hasPost("doidiem")){
             $soluot = $this->request->getPost("turn");
-            $sodiem = $soluot*20000;
+            $sodiem = $soluot*$point_v1;
             $user = User::findFirst($auth->id);
             if($user->mypointevent<$sodiem){
                 $this->flash->error("Số điểm hiện tại của bạn không đủ để đổi $soluot lượt");
@@ -179,8 +180,189 @@ class IndexController extends ControllerBase
                 $this->flash->success("Đổi lượt thành công");
             }
         }
+        else if($this->request->hasPost("daokhobau")){
+            $user = User::findFirst($auth->id);
+            if($user->count_play<=0) {
+                $this->flash->error("Bạn không đủ lượt tham gia để đào kho báu. Hãy đổi điểm sức mạnh lấy lượt tham gia và tiến hành đào kho báu");
+            }
+            else{
+                global $vungdat1;
+                $key =$vungdat1[array_rand($vungdat1)];
+                $itemobj = Items::findFirst(array("conditions"=>"item_keys=:key:","bind"=>array("key"=>$key)));
+                $this->view->itemRecv = $itemobj;
+                $user->count_play = $user->count_play-1;
+                $user->save();
+                $accountLog = new AccountLog();
+                $accountLog->userid = $auth->id;
+                $accountLog->item_key = $key;
+                $accountLog->create_at = time();
+                $accountLog->level = 1;
+                $accountLog->save();
+            }
+        }
         $user = User::findFirst($auth->id);
         $this->view->userobject = $user;
+        // Load item
+        $listitem = Items::find(array("conditions"=>"level=1"));
+        $this->view->listitem = $listitem;
+        // Load History
+        $history = AccountLog::find(array("conditions"=>"userid=:userid: and level=:level:","bind"=>array("userid"=>$auth->id,"level"=>1),"limit"=>10,"offset"=>0,"order"=>"create_at desc"));
+        $this->view->history = $history;
+        $this->view->history_count = AccountLog::count(array("conditions"=>"userid=:userid: and level=:level:","bind"=>array("userid"=>$auth->id,"level"=>1)));
+        // Load charge history
+        $chargehistory = Chargelog::find(array("conditions"=>"userid=:userid:","bind"=>array("userid"=>$auth->id),"limit"=>20,"offset"=>0,"order"=>"create_at desc"));
+        $this->view->chargehistory = $chargehistory;
+        $this->view->pointv = $point_v1;
+    }
+
+
+    public function vungdat2Action()
+    {
+        global $point_v2;
+        $auth = $this->getAuth();
+        if(empty($auth)) {
+            $this->flash->error("Bạn cần đăng nhập để vào vùng đất này");
+            $this->response->redirect("/");
+        }
+        // Check vung 1
+        $c = AccountLog::count(array("conditions"=>"userid=:userid: and level=:level:","bind"=>array("userid"=>$auth->id,"level"=>1)));
+        if($c<100){
+            $this->flash->error("Bạn cần đào 100 lần ở vùng đất 1 mới được chuyển sang vùng đất 2");
+            $this->response->redirect("/");
+            return;
+        }
+
+        if ($this->request->hasPost("saveinfo")) {
+            $user = User::findFirst($auth->id);
+            $user->fullname = $this->request->getPost("fullname", "string");
+            $user->cmnd = $this->request->getPost("cmnd", "string");
+            $user->sdt = $this->request->getPost("sdt", "string");
+            $user->address = $this->request->getPost("address", "string");
+            $user->save();
+            $this->flash->success("Lưu thành công");
+
+        }
+        else if($this->request->hasPost("doidiem")){
+            $soluot = $this->request->getPost("turn");
+            $sodiem = $soluot*$point_v2;
+            $user = User::findFirst($auth->id);
+            if($user->mypointevent<$sodiem){
+                $this->flash->error("Số điểm hiện tại của bạn không đủ để đổi $soluot lượt");
+            }
+            else{
+                $user->count_play = $user->count_play+$soluot;
+                $user->mypointevent = $user->mypointevent-$sodiem;
+                $user->save();
+                $this->flash->success("Đổi lượt thành công");
+            }
+        }
+        else if($this->request->hasPost("daokhobau")){
+            $user = User::findFirst($auth->id);
+            if($user->count_play<=0) {
+                $this->flash->error("Bạn không đủ lượt tham gia để đào kho báu. Hãy đổi điểm sức mạnh lấy lượt tham gia và tiến hành đào kho báu");
+            }
+            else{
+                global $vungdat2;
+                $key =$vungdat2[array_rand($vungdat2)];
+                $itemobj = Items::findFirst(array("conditions"=>"item_keys=:key:","bind"=>array("key"=>$key)));
+                $this->view->itemRecv = $itemobj;
+                $user->count_play = $user->count_play-1;
+                $user->save();
+                $accountLog = new AccountLog();
+                $accountLog->userid = $auth->id;
+                $accountLog->item_key = $key;
+                $accountLog->create_at = time();
+                $accountLog->level = 2;
+                $accountLog->save();
+            }
+        }
+        $user = User::findFirst($auth->id);
+        $this->view->userobject = $user;
+        // Load item
+        $listitem = Items::find(array("conditions"=>"level=2"));
+        $this->view->listitem = $listitem;
+        // Load History
+        $history = AccountLog::find(array("conditions"=>"userid=:userid: and level=:level:","bind"=>array("userid"=>$auth->id,"level"=>2),"limit"=>20,"offset"=>0,"order"=>"create_at desc"));
+        $this->view->history = $history;
+        $this->view->history_count = AccountLog::count(array("conditions"=>"userid=:userid: and level=:level:","bind"=>array("userid"=>$auth->id,"level"=>2)));
+        // Load charge history
+        $chargehistory = Chargelog::find(array("conditions"=>"userid=:userid:","bind"=>array("userid"=>$auth->id),"limit"=>10,"offset"=>0,"order"=>"create_at desc"));
+        $this->view->chargehistory = $chargehistory;
+        $this->view->pointv = $point_v2;
+    }
+
+    public function vungdat3Action()
+    {
+        global $point_v3;
+        $auth = $this->getAuth();
+        if(empty($auth)) {
+            $this->flash->error("Bạn cần đăng nhập để vào vùng đất này");
+            $this->response->redirect("/");
+        }
+        // Check vung 2
+        $c = AccountLog::count(array("conditions"=>"userid=:userid: and level=:level:","bind"=>array("userid"=>$auth->id,"level"=>2)));
+        if($c<200){
+            $this->flash->error("Bạn cần đào 200 lần ở vùng đất 2 mới được chuyển sang vùng đất 3");
+            $this->response->redirect("/");
+            return;
+        }
+        if ($this->request->hasPost("saveinfo")) {
+            $user = User::findFirst($auth->id);
+            $user->fullname = $this->request->getPost("fullname", "string");
+            $user->cmnd = $this->request->getPost("cmnd", "string");
+            $user->sdt = $this->request->getPost("sdt", "string");
+            $user->address = $this->request->getPost("address", "string");
+            $user->save();
+            $this->flash->success("Lưu thành công");
+
+        }
+        else if($this->request->hasPost("doidiem")){
+            $soluot = $this->request->getPost("turn");
+            $sodiem = $soluot*$point_v3;
+            $user = User::findFirst($auth->id);
+            if($user->mypointevent<$sodiem){
+                $this->flash->error("Số điểm hiện tại của bạn không đủ để đổi $soluot lượt");
+            }
+            else{
+                $user->count_play = $user->count_play+$soluot;
+                $user->mypointevent = $user->mypointevent-$sodiem;
+                $user->save();
+                $this->flash->success("Đổi lượt thành công");
+            }
+        }
+        else if($this->request->hasPost("daokhobau")){
+            $user = User::findFirst($auth->id);
+            if($user->count_play<=0) {
+                $this->flash->error("Bạn không đủ lượt tham gia để đào kho báu. Hãy đổi điểm sức mạnh lấy lượt tham gia và tiến hành đào kho báu");
+            }
+            else{
+                global $vungdat3;
+                $key =$vungdat3[array_rand($vungdat3)];
+                $itemobj = Items::findFirst(array("conditions"=>"item_keys=:key:","bind"=>array("key"=>$key)));
+                $this->view->itemRecv = $itemobj;
+                $user->count_play = $user->count_play-1;
+                $user->save();
+                $accountLog = new AccountLog();
+                $accountLog->userid = $auth->id;
+                $accountLog->item_key = $key;
+                $accountLog->create_at = time();
+                $accountLog->level = 2;
+                $accountLog->save();
+            }
+        }
+        $user = User::findFirst($auth->id);
+        $this->view->userobject = $user;
+        // Load item
+        $listitem = Items::find(array("conditions"=>"level=2"));
+        $this->view->listitem = $listitem;
+        // Load History
+        $history = AccountLog::find(array("conditions"=>"userid=:userid: and level=:level:","bind"=>array("userid"=>$auth->id,"level"=>2),"limit"=>20,"offset"=>0,"order"=>"create_at desc"));
+        $this->view->history = $history;
+        $this->view->history_count = AccountLog::count(array("conditions"=>"userid=:userid: and level=:level:","bind"=>array("userid"=>$auth->id,"level"=>3)));
+        // Load charge history
+        $chargehistory = Chargelog::find(array("conditions"=>"userid=:userid:","bind"=>array("userid"=>$auth->id),"limit"=>10,"offset"=>0,"order"=>"create_at desc"));
+        $this->view->chargehistory = $chargehistory;
+        $this->view->pointv = $point_v3;
     }
 
 }

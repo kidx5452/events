@@ -1,5 +1,5 @@
 <div class="main-content radius">
-    <h1 class="title-game">VÙNG ĐẤT 1</h1>
+    <h1 class="title-game">VÙNG ĐẤT 2</h1>
 
     <ul class="tabs">
         <li class="tab-link current" data-tab="tab-1">Bắt đầu chơi</li>
@@ -86,7 +86,7 @@
             </div>
             <div class="col-md-6 col-sm-6 col-xs-12 bg-rthe">
                 <form action="/index/napthe" method="post">
-                    <input type="hidden" name="backurl" value="/index/vungdat1">
+                    <input type="hidden" name="backurl" value="/index/vungdat2">
                     <ul>
                         <li>
                             <span>Loại thẻ</span>

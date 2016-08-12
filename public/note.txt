@@ -1,0 +1,5 @@
+- làm module thông tin thẻ cào
+- Làm thêm 1k lần thì đc tặng 1 vật phẩm
+- Đăng nhập admin
+- Dòng chữ chạy
+- Vui lòng nhập thông tin -> đưa ra khỏi tab

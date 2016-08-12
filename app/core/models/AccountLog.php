@@ -1,6 +1,6 @@
 <?php
 
-class Items extends BaseModel
+class AccountLog extends BaseModel
 {
 
     /**
@@ -11,15 +11,15 @@ class Items extends BaseModel
 
     /**
      *
-     * @var string
+     * @var integer
      */
-    public $avatar;
+    public $userid;
 
     /**
      *
      * @var string
      */
-    public $name;
+    public $item_key;
 
     /**
      *
@@ -31,15 +31,7 @@ class Items extends BaseModel
      *
      * @var integer
      */
-    public $status;
-
-    /**
-     *
-     * @var integer
-     */
     public $level;
-    public $item_keys;
-
 
     /**
      * Returns table name mapped in the model.
@@ -48,26 +40,28 @@ class Items extends BaseModel
      */
     public function getSource()
     {
-        return 'items';
+        return 'account_log';
     }
-
+    public function initialize()
+    {
+        $this->hasOne('item_key', 'Items', 'item_keys',array('alias' => 'Items'));
+    }
     /**
      * Allows to query a set of records that match the specified conditions
      *
      * @param mixed $parameters
-     * @return Items[]
+     * @return AccountLog[]
      */
     public static function find($parameters = null)
     {
         return parent::find($parameters);
     }
 
-
     /**
      * Allows to query the first record that match the specified conditions
      *
      * @param mixed $parameters
-     * @return Items
+     * @return AccountLog
      */
     public static function findFirst($parameters = null)
     {
