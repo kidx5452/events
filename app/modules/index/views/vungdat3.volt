@@ -6,22 +6,21 @@
         <li class="tab-link" data-tab="tab-2">Nhận lượt</li>
         <li class="tab-link" data-tab="tab-3">Lịch sử</li>
     </ul>
+<div>
+    <marquee class="txt-marquee">{{ nguoitrungthuong }}</marquee>
+    <div class="row">
+        <div class="col-md-6 col-sm-6 col-xs-6 txt-ltg">Lượt tham gia: <span>{{ userobject.count_play }}</span>
+        </div>
+        <div class="col-md-6 col-sm-6 col-xs-6 txt-dsm">Điểm sức mạnh: <span>{{ userobject.mypointevent }}</span>
+        </div>
+    </div>
 
+    <div class="txt-nhap">Vui lòng <a href="javascript:void(0)" data-toggle="modal" data-target="#idnhanluot">nhập
+            thông tin</a> để tham gia chương trình
+    </div>
+</div>
     <div id="tab-1" class="tab-content current">
-        <marquee class="txt-marquee">Chúc mừng khách hàng Đào Việt Dũng, chủ tài khoản ************988 đã đào trúng Pin
-            sạc dự phòng Xiaomi 10,000 mAh --- Chúc mừng khách hàng Trần Nguyên Công, chủ tài khoản ************ng1123
-            đã đào trúng Pin sạc dự phòng Xiaomi 10,000 mAh
-        </marquee>
-        <div class="row">
-            <div class="col-md-6 col-sm-6 col-xs-6 txt-ltg">Lượt tham gia: <span>{{ userobject.count_play }}</span>
-            </div>
-            <div class="col-md-6 col-sm-6 col-xs-6 txt-dsm">Điểm sức mạnh: <span>{{ userobject.mypointevent }}</span>
-            </div>
-        </div>
 
-        <div class="txt-nhap">Vui lòng <a href="javascript:void(0)" data-toggle="modal" data-target="#idnhanluot">nhập
-                thông tin</a> để tham gia chương trình
-        </div>
 
         <div class="form-group">
             <div class="input-group">
@@ -68,17 +67,7 @@
     <!-- end-tab1-->
 
     <div id="tab-2" class="tab-content">
-        <marquee class="txt-marquee">Chúc mừng khách hàng Đào Việt Dũng, chủ tài khoản ************988 đã đào trúng Pin
-            sạc dự phòng Xiaomi 10,000 mAh --- Chúc mừng khách hàng Trần Nguyên Công, chủ tài khoản ************ng1123
-            đã đào trúng Pin sạc dự phòng Xiaomi 10,000 mAh
-        </marquee>
-
         <div>
-            <div class="txt-nhap">Vui lòng <a href="javascript:void(0)" data-toggle="modal" data-target="#idnhanluot"
-                                              onclick="showmodal(this)">nhập thông tin</a> để tham gia chương trình
-            </div>
-            <div class="bg-nhanluot">Điểm sức mạnh {{ userobject.mypointevent }}<br>Lượt tham
-                gia {{ userobject.count_play }}</div>
             <div class="col-md-6 col-sm-6 col-xs-12 bg-lthe">
                 10.000 VND = 100.000 điểm sức mạnh<br>
                 100.000 điểm sức mạnh = 1 Lượt tham gia<br>
@@ -120,17 +109,6 @@
     <!-- end-tab2-->
 
     <div id="tab-3" class="tab-content">
-        <marquee class="txt-marquee">Chúc mừng khách hàng Đào Việt Dũng, chủ tài khoản ************988 đã đào trúng Pin
-            sạc dự phòng Xiaomi 10,000 mAh --- Chúc mừng khách hàng Trần Nguyên Công, chủ tài khoản ************ng1123
-            đã đào trúng Pin sạc dự phòng Xiaomi 10,000 mAh
-        </marquee>
-        <div class="row">
-            <div class="col-md-6 col-sm-6 col-xs-6 txt-ltg">Lượt tham gia: <span>5</span></div>
-            <div class="col-md-6 col-sm-6 col-xs-6 txt-dsm">Điểm sức mạnh: <span>132</span></div>
-        </div>
-
-        <div class="txt-nhap">Vui lòng <a href="#">nhập thông tin</a> để tham gia chương trình</div>
-
         <div class="txt-lichsu">LỊCH SỬ THAM GIA</div>
         <div class="table-responsive-vertical shadow-z-1">
             <table id="table" class="table table-hover table-mc-light-blue">

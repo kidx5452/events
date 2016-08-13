@@ -18,6 +18,7 @@
                             <th>ID</th>
                             <th>Avatar</th>
                             <th>Name</th>
+                            <th>Vùng đất</th>
                             <th>Action</th>
                         </tr>
                     </thread>
@@ -29,6 +30,7 @@
                                 <img width="96" src="{{ media.host~item.avatar }}" alt="Cover Photo">
                             </td>
                             <td>{{ item.name }}</td>
+                            <td>{{ item.level }}</td>
                             <td>
                                 <a class="btn btn-sm btn-info" href="form?id={{ item.id }}"><i class="fa fa-pencil"></i> Sửa</a>
                                 <a class="btn btn-sm btn-warning" onclick="return confirm('Are you sure')" href="delete?id={{ item.id }}"><i class="fa fa-times"></i> Xóa</a>

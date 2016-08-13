@@ -56,5 +56,11 @@ class ItemsAdminController extends ControllerAdminBase
         if (!empty($id)) $o = Items::findFirst($id);
         $this->view->object = $o;
     }
-
+    public function deleteAction(){
+        $id = $this->request->get("id");
+        Items::findFirst($id)->delete();
+        $this->flash->success("Xóa thành công");
+        $this->response->redirect("items-admin/");
+        return;
+    }
 }

@@ -2,6 +2,10 @@
 $point_v1 = 20000;
 $point_v2 = 40000;
 $point_v3 = 80000;
+$nguoitrungthuong = array(
+    "Xin chúc mừng Nguyễn văn mừng đã trúng ipad mini",
+    "Xin chúc mừng Nguyễn hoàng anh đã trúng thẻ 20k",
+);
 $shopdoiqua =array(
     array("name"=>"Rương gỗ","key"=>"ruong-go"),
     array("name"=>"Rương đá","key"=>"ruong-da"),
