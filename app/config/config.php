@@ -30,5 +30,5 @@ return new \Phalcon\Config(array(
         "dir"=>"C:\\Winginx\\home\\event\\public_html\\public\\",
         "host"=>"http://event.vantiens.com/"
     ),
-    'modules'=>array("index","giaithuong","thele","shopqua","items")
+    'modules'=>array("index","giaithuong","thele","shopqua","items","cards")
 ));

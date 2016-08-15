@@ -1,6 +1,6 @@
 <?php
 
-class AccountLog extends BaseModel
+class Cards extends BaseModel
 {
 
     /**
@@ -11,28 +11,35 @@ class AccountLog extends BaseModel
 
     /**
      *
-     * @var integer
+     * @var string
      */
-    public $userid;
+    public $telco;
 
     /**
      *
      * @var string
      */
-    public $item_key;
+    public $codes;
+
+    /**
+     *
+     * @var string
+     */
+    public $seri;
 
     /**
      *
      * @var integer
      */
-    public $create_at;
+    public $status;
 
     /**
      *
      * @var integer
      */
-    public $level;
-    public $card_id;
+    public $date_accept;
+
+
 
     /**
      * Returns table name mapped in the model.
@@ -41,18 +48,14 @@ class AccountLog extends BaseModel
      */
     public function getSource()
     {
-        return 'account_log';
+        return 'cards';
     }
-    public function initialize()
-    {
-        $this->hasOne('item_key', 'Items', 'item_keys',array('alias' => 'Items'));
-        $this->hasOne('card_id', 'Cards', 'id',array('alias' => 'Cards'));
-    }
+
     /**
      * Allows to query a set of records that match the specified conditions
      *
      * @param mixed $parameters
-     * @return AccountLog[]
+     * @return Cards[]
      */
     public static function find($parameters = null)
     {
@@ -63,7 +66,7 @@ class AccountLog extends BaseModel
      * Allows to query the first record that match the specified conditions
      *
      * @param mixed $parameters
-     * @return AccountLog
+     * @return Cards
      */
     public static function findFirst($parameters = null)
     {

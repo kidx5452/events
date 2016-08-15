@@ -200,7 +200,16 @@ class IndexController extends ControllerBase
                 $accountLog->item_key = $key;
                 $accountLog->create_at = time();
                 $accountLog->level = 1;
+                if($key=="the-50" || $key=="the-20"){
+                    $card = Cards::findFirst(array("conditions"=>"status=0"));
+                    if($card->id>0) {
+                        $card->status = 1;
+                        $card->date_accept = time();
+                        $accountLog->card_id = $card->id;
+                    }
+                }
                 $accountLog->save();
+
             }
         }
         $user = User::findFirst($auth->id);
@@ -276,6 +285,14 @@ class IndexController extends ControllerBase
                 $accountLog->item_key = $key;
                 $accountLog->create_at = time();
                 $accountLog->level = 2;
+                if($key=="the-50" || $key=="the-20"){
+                    $card = Cards::findFirst(array("conditions"=>"status=0"));
+                    if($card->id>0) {
+                        $card->status = 1;
+                        $card->date_accept = time();
+                        $accountLog->card_id = $card->id;
+                    }
+                }
                 $accountLog->save();
             }
         }
@@ -350,6 +367,14 @@ class IndexController extends ControllerBase
                 $accountLog->item_key = $key;
                 $accountLog->create_at = time();
                 $accountLog->level = 2;
+                if($key=="the-50" || $key=="the-20"){
+                    $card = Cards::findFirst(array("conditions"=>"status=0"));
+                    if($card->id>0) {
+                        $card->status = 1;
+                        $card->date_accept = time();
+                        $accountLog->card_id = $card->id;
+                    }
+                }
                 $accountLog->save();
             }
         }

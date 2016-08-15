@@ -122,7 +122,16 @@
                 {% for item in history %}
                     <tr>
                         <td>{{ date("d-m-Y H:i:s",item.create_at) }}</td>
-                        <td>1 {{ item.Items.name }}</td>
+                        <td>1 {{ item.Items.name }}
+                            {% if item.card_id>0 %}
+                                <p onclick="jQuery(this).next().show()"><small><a href="javascript:void(0)">Bấm vào đây để xem thông tin thẻ</a></small></p>
+                                <div style="display: none;text-align: left">
+                                    <p>Mạng: {{ item.Cards.telco|upper }}</p>
+                                    <p>Mã thẻ: {{ item.Cards.codes }}</p>
+                                    <p>Seri: {{ item.Cards.seri }}</p>
+                                </div>
+                            {% endif %}
+                        </td>
                     </tr>
                 {% endfor %}
                 </tbody>

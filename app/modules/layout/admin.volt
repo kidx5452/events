@@ -159,6 +159,15 @@
                 </li><!--end /menu-li -->
                 <!-- END UI -->
 
+                <!-- BEGIN UI -->
+                <li class="{{ activeMenu=="cards"?"active expanded":"" }}">
+                    <a href="/cards_admin/index">
+                        <div class="gui-icon"><i class="fa fa-puzzle-piece fa-fw"></i></div>
+                        <span class="title">Thẻ cào</span>
+                    </a>
+                </li><!--end /menu-li -->
+                <!-- END UI -->
+
             </ul><!--end .main-menu -->
             <!-- END MAIN MENU -->
 
