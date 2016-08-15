@@ -1,4 +1,6 @@
 <?php
+$admin['username'] = "admin";
+$admin['password'] = "123456$$";
 $point_v1 = 20000;
 $point_v2 = 40000;
 $point_v3 = 80000;

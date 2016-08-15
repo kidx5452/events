@@ -5,7 +5,7 @@
       <paths name="Events">
         <serverdata>
           <mappings>
-            <mapping deploy="/" local="$PROJECT_DIR$" web="/" />
+            <mapping deploy="/home/event.vantiens.com" local="$PROJECT_DIR$" web="/" />
           </mappings>
         </serverdata>
       </paths>

@@ -2,11 +2,12 @@
 <project version="4">
   <component name="WebServers">
     <option name="servers">
-      <webServer id="cb597772-7798-4f0b-82d7-0f3aac57c89e" name="Events" url="http://event.vantiens.com">
-        <fileTransfer host="event.vantiens.com" port="21" password="df9bdf98df99df9edf9fdf9cdf9cdf9fdf9edf99df98df9bdf8e" username="vietnh">
+      <webServer id="cb597772-7798-4f0b-82d7-0f3aac57c89e" name="Events" url="http://123.30.241.21">
+        <fileTransfer host="123.30.241.21" port="22" accessType="SFTP" password="dfc9df9fdfe3df9ddfdbdfeadfe2dffcdfc3dfce" username="root">
           <advancedOptions>
             <advancedOptions dataProtectionLevel="Private" passiveMode="true" />
           </advancedOptions>
+          <option name="port" value="22" />
         </fileTransfer>
       </webServer>
     </option>

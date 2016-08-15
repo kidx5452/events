@@ -4,8 +4,8 @@ defined('APP_PATH') || define('APP_PATH', realpath('.'));
 return new \Phalcon\Config(array(
     'database' => array(
         'adapter'     => 'Mysql',
-        'host'        => 'event.vantiens.com',
-        'username'    => 'events',
+        'host'        => '127.0.0.1',
+        'username'    => 'root',
         'password'    => '123456654321$',
         'dbname'      => 'events',
         'charset'     => 'utf8',
@@ -14,7 +14,7 @@ return new \Phalcon\Config(array(
         'adapter'     => 'Mysql',
         'host'        => '127.0.0.1',
         'username'    => 'root',
-        'password'    => 'vantien!@#$%^',
+        'password'    => '123456654321$',
         'dbname'      => 'vantiens',
         'charset'     => 'utf8',
     ),

@@ -15,6 +15,19 @@ class IndexAdminController extends ControllerAdminBase
         $this->view->activeMenu = "index";
     }
     public function indexAction(){
-
+        if(!$this->checkLogin()) return;
+    }
+    public function loginAction(){
+        $this->switchLayout("blank");
+        global $admin;
+        if($this->request->isPost()){
+            $username = $this->request->getPost("username");
+            $password = $this->request->getPost("password");
+            if($username==$admin['username']&&$password==$admin['password']){
+                $this->setAuth($admin);
+                $this->response->redirect("index-admin/");
+            }
+            else $this->flash->error("Sai thông tin đăng nhập");
+        }
     }
 }

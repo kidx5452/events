@@ -16,7 +16,13 @@ class ControllerAdminBase extends \Phalcon\Mvc\Controller
         $this->layoutFile = "index";
         $this->view->media = $config->media;
     }
-
+    public function checkLogin(){
+        if(empty($this->getAuth())){
+            $this->response->redirect("index-admin/login");
+            return false;
+        }
+        return true;
+    }
     /***
      * Hàm này dùng để switch view giữa client và admin + init Language + ...
      * @param $moduleDir
@@ -414,7 +420,7 @@ class ControllerAdminBase extends \Phalcon\Mvc\Controller
      */
     protected function getAuth()
     {
-        return $this->session->get("auth");
+        return $this->session->get("auth_admin");
     }
 
     /**
@@ -422,7 +428,7 @@ class ControllerAdminBase extends \Phalcon\Mvc\Controller
      */
     protected function setAuth($auth)
     {
-        $this->session->set("auth",$auth);
+        $this->session->set("auth_admin",$auth);
     }
 
 
