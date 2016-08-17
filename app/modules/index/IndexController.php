@@ -25,19 +25,20 @@ class IndexController extends ControllerBase
 
     public function authAction()
     {
-        $username = $this->request->getPost("username", "string");
-        $password = $this->request->getPost("password", "string");
-        $user = User::findFirst(array("conditions" => "username=:username: and password=:password:", "bind" => array("username" => $username, "password" => md5($password))));
-        if ($user->id > 0) {
-            $this->setAuth($user);
-            $this->response->redirect("/index/index");
-            return;
-        } else {
-            $this->flash->error("No Account info");
-            $this->view->loginfailed = true;
-            //$this->response->redirect("/");
+        if($this->request->isPost()){
+            $username = $this->request->getPost("username", "string");
+            $password = $this->request->getPost("password", "string");
+            $user = User::findFirst(array("conditions" => "username=:username: and password=:password:", "bind" => array("username" => $username, "password" => md5($password))));
+            if ($user->id > 0) {
+                $this->setAuth($user);
+                $this->response->redirect("/index/index");
+                return;
+            } else {
+                $this->flash->error("No Account info");
+                $this->view->loginfailed = true;
+                //$this->response->redirect("/");
+            }
         }
-
     }
 
     public function registerAction()

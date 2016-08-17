@@ -16,8 +16,13 @@ class ShopquaController extends ControllerBase
     }
     public function indexAction(){
         $auth = $this->getAuth();
-        $config = Configs::findFirst(array("conditions"=>"key='thele'"));
-        $this->view->thele = $config;
+        /*if(empty($auth)){
+            $this->response->redirect("index/auth");
+            return;
+        }*/
+        $tl =  new stdClass();
+        $tl->contents = file_get_contents(getcwd()."/thele.vf");
+        $this->view->thele = $tl;
         //
         $user = User::findFirst($auth->id);
         $this->view->userobject = $user;

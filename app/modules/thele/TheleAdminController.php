@@ -18,15 +18,14 @@ class TheleAdminController extends ControllerAdminBase
 
     public function indexAction()
     {
-        $gt = Configs::findFirst(array("conditions" => "key='thele'"));
+        $file = getcwd()."/thele.vf";
         if($this->request->isPost()){
-            if($gt->id<=0) $gt = new Configs();
-            $gt->contents = $this->request->getPost("contents");
-            $gt->key = "thele";
-            $gt->create_at = time();
-            $gt->save();
+            file_put_contents($file,$this->request->getPost("contents"));
             $this->flash->success("Success");
         }
+
+        $gt =new stdClass();
+        $gt->contents = file_get_contents($file);
         $this->view->object = $gt;
     }
 
